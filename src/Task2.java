@@ -2,8 +2,8 @@ package src;
 
 import java.util.Scanner;
 
-// task 1
 public class Task2 {
+    // Drawing a staircase structure - given the required height, output a staircase as shown in the example
     public static void main(String[] args) {
         int height;
         Scanner in = new Scanner(System.in);

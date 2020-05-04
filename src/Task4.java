@@ -3,6 +3,7 @@ package src;
 import java.util.Scanner;
 
 public class Task4 {
+    //Given an array of integers, implement the BubbleSort algorithm for sorting the elements of the array
     public static void main(String[] args) {
         int arrayLength;
         boolean changesDone = false;

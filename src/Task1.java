@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class Task1 {
     public static void main(String[] args) {
+        //Given a string of characters, determine if it is a palindrome or not
         Scanner in = new Scanner(System.in);
         String text;
         boolean isPalindrome = true;

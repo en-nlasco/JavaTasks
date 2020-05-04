@@ -3,6 +3,7 @@ package src;
 import java.util.Scanner;
 
 public class Task3 {
+    //Given an array of floating point numbers, inverse the elements of the array
     public static void main(String[] args) {
 
         int arraySize;
