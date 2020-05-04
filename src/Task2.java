@@ -7,7 +7,7 @@ public class Task2 {
     public static void main(String[] args) {
         int height;
         Scanner in = new Scanner(System.in);
-        System.out.println("Please insert height of the piramid");
+        System.out.println("Please insert height of the pyramid");
         height = in.nextInt();
         for (int k = height; k > 0; k--) {
             for (int i = k/2+1; i >0; i--) {
