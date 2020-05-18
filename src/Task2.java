@@ -9,10 +9,8 @@ public class Task2 {
         Scanner in = new Scanner(System.in);
         System.out.println("Please insert height of the pyramid");
         height = in.nextInt();
-        for (int k = height; k > 0; k--) {
-            for (int i = k / 2 + 1; i > 0; i--)
-                System.out.print(' ');
-            for (int j = height - k + 1; j > 0; j--)
+        for (int i = 1; i <= height; i++) {
+            for (int j = 1; j <= i; j++)
                 System.out.print('#');
             System.out.println();
         }

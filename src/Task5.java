@@ -19,7 +19,7 @@ public class Task5 {
         for (Integer i : array)
             if (i % 2 == 0)
                 evenAmount++;
-            else oddSum = oddSum + i;
+            else oddSum += i;
         System.out.println("Sum of the odd numbers is: " + oddSum);
         System.out.println("Amount of the even numbers is: " + evenAmount);
     }
