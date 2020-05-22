@@ -1,6 +1,7 @@
 package src;
 
 
+import javax.print.attribute.IntegerSyntax;
 import java.util.Scanner;
 
 
@@ -17,7 +18,7 @@ public class Task12 {
             for (int j = 0; j < n; j++)
                 matrix[i][j] = in.nextInt();
 
-        System.out.println("Here is yout matrix:");
+        System.out.println("Here is your matrix:");
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++)
                 System.out.print(matrix[i][j] + ", ");
@@ -39,11 +40,7 @@ public class Task12 {
         do {
             for (int i = 0; i < matrix[0].length - 1; i++) {
                 changesMade = false;
-                Integer sum1 = 0, sum2 = 0;
-                for (Integer m : matrix[i])
-                    sum1 += m;
-                for (Integer m : matrix[i + 1])
-                    sum2 += m;
+                Integer sum1 = sumLine(matrix[i]), sum2 = sumLine(matrix[i + 1]);
                 if (sum2 < sum1) {
                     line = matrix[i + 1];
                     matrix[i + 1] = matrix[i];
@@ -52,5 +49,12 @@ public class Task12 {
                 }
             }
         } while (changesMade);
+    }
+
+    public static Integer sumLine(Integer[] line) {
+        Integer sum = 0;
+        for (Integer i : line)
+            sum += i;
+        return sum;
     }
 }

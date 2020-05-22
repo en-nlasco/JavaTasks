@@ -10,45 +10,35 @@ public class Task11 {
         array3 = new int[]{1, 4, 7, 8};
         for (int i : merge3Arrays(array1, array2, array3))
             System.out.println(i);
-
-
     }
 
-    static int[] merge3Arrays(int[] array1, int[] array2, int[] array3) {
-        int[] finalArray = new int[array1.length + array2.length + array3.length];
+    public static int[] merge3Arrays(int[] array1, int[] array2, int[] array3) {
+        return merge2Arrays(merge2Arrays(array1, array2), array3);
+    }
+
+    public static int[] merge2Arrays(int[] array1, int[] array2) {
+        int[] finalArray = new int[array1.length + array2.length];
         int counter = 0;
         for (int i = 0; i < array1.length; i++) {
             finalArray[i] = array1[i];
             counter++;
         }
-        for (int i = 0; i < array2.length; i++){
+        for (int i = 0; i < array2.length; i++) {
             for (int j = 0; j < counter; j++)
                 if (array2[i] < finalArray[j]) {
-                    for (int l = counter; l> j; l--) {
+                    for (int l = counter; l > j; l--) {
                         finalArray[l] = finalArray[l - 1];
                     }
-                    finalArray[j]=array2[i];
+                    finalArray[j] = array2[i];
                     counter++;
                     break;
-                } else if (counter-1==j){
-                finalArray[counter]=array2[i];
-                    counter++;
-                break;}}
-        for (int i = 0; i < array3.length; i++){
-            for (int j = 0; j < counter; j++)
-                if (array3[i] < finalArray[j]) {
-                    for (int l = counter; l> j; l--) {
-                        finalArray[l] = finalArray[l - 1];
-                    }
-                    finalArray[j]=array3[i];
+                } else if (counter - 1 == j) {
+                    finalArray[counter] = array2[i];
                     counter++;
                     break;
-                } else if (counter-1==j){
-                    finalArray[counter]=array3[i];
-                    counter++;
-                    break;}}
+                }
+        }
         return finalArray;
     }
-
 }
 
